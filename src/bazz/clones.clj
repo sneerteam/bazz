@@ -62,5 +62,4 @@
       (thread
         (clone-with-simple-monitor (github-uri peer product) local-dir new-channel)
         (swap! responses-by-product-path #(dissoc % local-dir))
-        (>!! new-channel " Done.")
         (close! new-channel)))))

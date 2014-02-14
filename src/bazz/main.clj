@@ -37,7 +37,7 @@
          (when-let [response (async/<! response-channel)]
            (http-kit/send! http-channel response false) ; false means dont close
            (recur)))
-       (http-kit/close http-channel)))))
+       (http-kit/send! http-channel " Done." true)))))
 
 (defn choose-encoding-for [{{accept "accept"} :headers}]
   (if (re-find #"\bapplication/edn\b" (or accept ""))
