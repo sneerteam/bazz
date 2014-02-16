@@ -3,10 +3,9 @@
 /lib
 /classes
 /native
-/.lein-failures
 /checkouts
-/.lein-deps-sum
+.lein*
 /target
 /tmp
 .nrepl-port
-
+*~
